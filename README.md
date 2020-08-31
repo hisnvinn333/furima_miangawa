@@ -1,7 +1,7 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|default(string)|null: false, index:true|
+|nickname|default(string)|null: false, index: true|
 |email|default(string)|null: false|
 |encrypted_password|string|null: false, default: ""|
 |first_name|string|null: false|
