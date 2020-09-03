@@ -16,7 +16,7 @@
 
 
 ## addressesテーブル
-|Column|Type|Options|
+|Column|Typeああ|Options|
 |------|----|-------|
 |name|string|null: false|
 |postal_code|integer|null: false|
