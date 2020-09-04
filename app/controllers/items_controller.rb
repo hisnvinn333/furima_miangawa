@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :select_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -20,6 +21,9 @@ class ItemsController < ApplicationController
     render 'new'
   end
 
+  def show
+  end
+
   private
 
   def item_params
@@ -34,6 +38,10 @@ class ItemsController < ApplicationController
       :scheduled_delivery_id,
       :price
     ).merge(user_id: current_user.id)
+  end
+
+  def select_item
+    @item = Item.find(params[:id])
   end
 
 end
