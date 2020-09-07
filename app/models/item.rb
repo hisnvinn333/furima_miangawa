@@ -1,4 +1,4 @@
-  class Item < ApplicationRecord
+class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
   # <<バリデーション>>
