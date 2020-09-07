@@ -31,7 +31,13 @@ class ItemsController < ApplicationController
   def update
     @item.update(item_params) if current_user.id == @item.user.id
     return redirect_to item_path if @item.valid?
+
     render 'edit'
+  end
+
+  def destroy
+    @item.destroy if current_user.id == @item.user.id
+    redirect_to root_path
   end
 
   private
@@ -53,5 +59,4 @@ class ItemsController < ApplicationController
   def select_item
     @item = Item.find(params[:id])
   end
-
 end
