@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   if (path.includes("items") && path.includes("transactions") && /^([1-9]\d*|0)$/.test(params)) {
     const PAYJP_PK = process.env.PAYJP_PUBLIC_KEY
+    console.log(process.env.PAYJP_PUBLIC_KEY)
     Payjp.setPublicKey(PAYJP_PK);
     const form = document.getElementById("charge-form");
 
@@ -32,6 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
       };
 
       Payjp.createToken(card, (status, response) => {
+        console.log(status)
         if (status === 200) {
           // response.idでtokenが取得できます。
           const token = response.id;
@@ -42,7 +44,7 @@ window.addEventListener("DOMContentLoaded", () => {
           sendWithoutCardInfo()
         } else {
           // window.alert('購入処理に失敗しました。\nお手数ですが最初からやり直してください。');
-          sendWithoutCardInfo()
+          // sendWithoutCardInfo()
         }
         console.log(response.error.message)
         debugger
