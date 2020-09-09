@@ -30,7 +30,6 @@
 ### Association
 - belongs_to: item_transction
 
-
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
