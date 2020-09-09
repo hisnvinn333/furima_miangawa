@@ -6,3 +6,4 @@ Rails.application.routes.draw do
     resources :transactions, only: [:index, :new, :create]
   end
 end
+
